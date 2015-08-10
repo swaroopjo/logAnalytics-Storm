@@ -1,5 +1,5 @@
-# logAnalytics-Storm
-Analyse Log data for errors/excpetions using Storm 
+## logAnalytics-Storm
+#Analyse Log data for errors/excpetions using Storm 
 
 Application monitors the log files in a cluster for any sort of errors/runtime exceptions and report them to the user using their email address. 
 
