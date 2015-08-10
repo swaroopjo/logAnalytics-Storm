@@ -3,7 +3,7 @@
 
 Application monitors the log files in a cluster for any sort of errors/runtime exceptions and report them to the user using their email address. 
 
-Topology: 
+##Topology: 
 
 1. LogGrabberSpout makes a call to the logViewerApplication for Log file over http and emits the lines one by one to the LogParserBolt. 
 
@@ -13,10 +13,10 @@ Topology:
 
 4. After the end of file is reached, The LogParserBolt checks the db if there are any excpeions to be notified and sends an email about it. 
 
-Technologies: 
+##Technologies: 
   Apache storm, Apache Derby, Java. 
   
-Usage: 
+##Usage: 
   
   Run the InsertScript which will create the tables (LastLogTable and LogExceptionTable). 
   
@@ -24,7 +24,7 @@ Usage:
   
   LogExceptionTable behaves like a queue that stores the Exception information and is then flushed once the user is notified. 
   
-Algorithm: 
+##Algorithm: 
   
   - At the start of the application, 
   
