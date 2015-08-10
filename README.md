@@ -4,9 +4,13 @@ Analyse Log data for errors/excpetions using Storm
 Application monitors the log files in a cluster for any sort of errors/runtime exceptions and report them to the user using their email address. 
 
 Topology: 
+
 1. LogGrabberSpout makes a call to the logViewerApplication for Log file over http and emits the lines one by one to the LogParserBolt. 
+
 2. LogParserBolt checks for the last updated logLine, ignores the html tags, and emits the line to the PatternMatchingBolt. 
+
 3. PatternMatchingBolt matches the line with errors/exceptions and stores the line in the database. 
+
 4. After the end of file is reached, The LogParserBolt checks the db if there are any excpeions to be notified and sends an email about it. 
 
 Technologies: 
